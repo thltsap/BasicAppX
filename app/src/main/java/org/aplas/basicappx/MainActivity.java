@@ -52,41 +52,41 @@ public class MainActivity extends AppCompatActivity {
         imgFormula = (ImageView) findViewById(R.id.imgFormula);
 
         unitType.setOnCheckedChangeListener(
-            new RadioGroup.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    RadioButton selected = (RadioButton) findViewById(checkedId);
-                    ArrayAdapter<CharSequence> adapter;
-                    switch (selected.getId()) {
-                        case R.id.rbTemp:
-                            adapter = ArrayAdapter.createFromResource(unitType.getContext(),
-                                    R.array.tempList, android.R.layout.simple_spinner_item);
-                            imgView.setImageResource(R.drawable.temperature);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            unitOri.setAdapter(adapter);
-                            unitConv.setAdapter(adapter);
-                            break;
-                        case R.id.rbDist:
-                            adapter = ArrayAdapter.createFromResource(unitType.getContext(),
-                                    R.array.distList, android.R.layout.simple_spinner_item);
-                            imgView.setImageResource(R.drawable.distance);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            unitOri.setAdapter(adapter);
-                            unitConv.setAdapter(adapter);
-                            break;
-                        case R.id.rbWeight:
-                            adapter = ArrayAdapter.createFromResource(unitType.getContext(),
-                                    R.array.weightList, android.R.layout.simple_spinner_item);
-                            imgView.setImageResource(R.drawable.weight);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            unitOri.setAdapter(adapter);
-                            unitConv.setAdapter(adapter);
-                            break;
+                new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        RadioButton selected = (RadioButton) findViewById(checkedId);
+                        ArrayAdapter<CharSequence> adapter;
+                        switch (selected.getId()) {
+                            case R.id.rbTemp:
+                                adapter = ArrayAdapter.createFromResource(unitType.getContext(),
+                                        R.array.tempList, android.R.layout.simple_spinner_item);
+                                imgView.setImageResource(R.drawable.temperature);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                unitOri.setAdapter(adapter);
+                                unitConv.setAdapter(adapter);
+                                break;
+                            case R.id.rbDist:
+                                adapter = ArrayAdapter.createFromResource(unitType.getContext(),
+                                        R.array.distList, android.R.layout.simple_spinner_item);
+                                imgView.setImageResource(R.drawable.distance);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                unitOri.setAdapter(adapter);
+                                unitConv.setAdapter(adapter);
+                                break;
+                            case R.id.rbWeight:
+                                adapter = ArrayAdapter.createFromResource(unitType.getContext(),
+                                        R.array.weightList, android.R.layout.simple_spinner_item);
+                                imgView.setImageResource(R.drawable.weight);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                unitOri.setAdapter(adapter);
+                                unitConv.setAdapter(adapter);
+                                break;
+                        }
+                        inputTxt.setText("0");
+                        outputTxt.setText("0");
                     }
-                    inputTxt.setText("0");
-                    outputTxt.setText("0");
                 }
-            }
         );
 
         convertBtn.setOnClickListener(new View.OnClickListener() {
@@ -173,12 +173,12 @@ public class MainActivity extends AppCompatActivity {
         startDialog.setTitle("Application started");
         startDialog.setMessage("This app can use to convert any units");
         startDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-            new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
                 }
-            }
         );
         startDialog.show();
     }
